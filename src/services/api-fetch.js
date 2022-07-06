@@ -44,6 +44,5 @@ export default async function apiFetch(
   } catch (error) {
     data = response.statusText;
   }
-  console.log("response" ,data)
   return data;
 }
