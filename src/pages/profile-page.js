@@ -8,40 +8,50 @@ export const ProfilePage = () => {
 	"address": "Lima-Peru"
 } */
   return (
-    <div
-      css={css`
-        ${containerCard}
-      `}
-    >
+    <div>
       <div>
         <h2>Update personal details</h2>
       </div>
-      <div css={css`
-        ${labelInput}
-      `} >
-        <label>Name</label>
-        <input />
-      </div>
-	  <div css={css`
-        ${labelInput}
-      `} >
-        <label>Email</label>
-        <input />
-      </div>
-      <div css={css`
-        ${labelInput}
-      `} >
-        <label>Phone</label>
-        <input />
-      </div>
-	  <div css={css`
-        ${labelInput}
-      `} >
-        <label>Address</label>
-        <input />
-      </div>
-      <div>
-        <button>Update</button>
+      <div
+        css={css`
+          ${containerCard}
+        `}
+      >
+        <div
+          css={css`
+            ${labelInput}
+          `}
+        >
+          <label>Name</label>
+          <input />
+        </div>
+        <div
+          css={css`
+            ${labelInput}
+          `}
+        >
+          <label>Email</label>
+          <input />
+        </div>
+        <div
+          css={css`
+            ${labelInput}
+          `}
+        >
+          <label>Phone</label>
+          <input />
+        </div>
+        <div
+          css={css`
+            ${labelInput}
+          `}
+        >
+          <label>Address</label>
+          <input />
+        </div>
+        <div>
+          <button>Update</button>
+        </div>
       </div>
     </div>
   );
