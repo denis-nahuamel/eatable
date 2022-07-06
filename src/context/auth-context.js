@@ -4,19 +4,23 @@ import * as sessions from "../services/auth-service.js";
 import { getUser } from "../services/user-service";
 
 const AuthContext = createContext();
+
 export const  AuthProvider = (props) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
+       
       getUser().then((data)=>{
         setLoading(false);
         setUser(data)
-      } ).catch((error)=> console.log(error))
+      } )
+      .catch((error)=> {console.log("error", error); setLoading(false)})
     }, [])
+
     const login = (credentials)=> {
-        return sessions.login(credentials).then((user)=>{
+        return sessions.login(credentials).then(user=>{
             setUser(user)
             navigate("profile")
         })
@@ -30,7 +34,9 @@ export const  AuthProvider = (props) => {
     }
 
     const value = {
-        user, login, logout
+        user, 
+        login, 
+        logout
     }
     
     if(loading) return <p>Loading...</p>
@@ -38,6 +44,6 @@ export const  AuthProvider = (props) => {
     return <AuthContext.Provider value={value} {...props} />
 }
 
-const useAuth = ()=> {
+export function useAuth(){
     return useContext(AuthContext)
 }
