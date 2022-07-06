@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import {  buttonLogin, container, containerRow } from "../styles/utils";
+import {  buttonLogin, container, containerColumn } from "../styles/utils";
 
 const FormData = ({endpoint, type}) => {
 
@@ -31,12 +31,12 @@ const FormData = ({endpoint, type}) => {
       >
         {({ isSubmitting }) => (
           <Form>
-            <div css={css`${containerRow}`}>
+            <div css={css`${containerColumn}`}>
               <label>Email address: </label>
               <Field type="email" name="email" />
               <ErrorMessage name="email" component="div" />
             </div>
-            <div css={css`${containerRow}`}>
+            <div css={css`${containerColumn}`}>
               <label>Password: </label>
               <Field type="password" name="password" />
               <ErrorMessage name="password" component="div" />
