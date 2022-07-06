@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import {useNavigate} from "react-router-dom";
 import * as sessions from "../services/auth-service.js";
-import { getUser } from "../services/user-service";
+import { getUser, signup } from "../services/user-service";
 
 const AuthContext = createContext();
 
@@ -25,6 +25,12 @@ export const  AuthProvider = (props) => {
             navigate("profile")
         })
     }
+    const signupUser = (credentials) => {
+        return signup(credentials).then(user => {
+            setUser(user)
+            navigate("profile")
+        })
+    }
 
     const logout = () => {
         return sessions.logout().then(()=> {
@@ -36,7 +42,8 @@ export const  AuthProvider = (props) => {
     const value = {
         user, 
         login, 
-        logout
+        logout,
+        signupUser
     }
     
     if(loading) return <p>Loading...</p>
