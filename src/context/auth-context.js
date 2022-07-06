@@ -22,13 +22,13 @@ export const  AuthProvider = (props) => {
     const login = (credentials)=> {
         return sessions.login(credentials).then(user=>{
             setUser(user)
-            navigate("profile")
+            navigate("logged")
         })
     }
     const signupUser = (credentials) => {
         return signup(credentials).then(user => {
             setUser(user)
-            navigate("profile")
+            navigate("logged")
         })
     }
 
