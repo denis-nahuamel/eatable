@@ -13,9 +13,22 @@ export const container = `
     flex-wrap: wrap;
     justify-content: center;
 `
-export const containerRow = `
+export const containerColumn = `
     display: flex;
     flex-direction: column;
+`
+export const containerCard = `
+    ${containerColumn};
+    background-color: #FFFFFF;
+    margin: 50px;
+    gap: 5px;
+    padding: 15px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+`
+export const labelInput = `
+    ${containerColumn};
+    gap: 5px;
 `
 export const buttonLogin = `
     ${container};

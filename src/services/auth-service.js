@@ -9,5 +9,5 @@ export function login(credentials){
     } )
 }
 export function logout(){
-    return apiFetch("/logout", {method: "DELETE"});
+    return apiFetch("/logout", {method: "DELETE"}).then(()=>{sessionStorage.removeItem(tokenKey)});
 }

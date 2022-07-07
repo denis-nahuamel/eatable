@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import {useNavigate} from "react-router-dom";
 import * as sessions from "../services/auth-service.js";
-import { getUser, signup } from "../services/user-service";
+import { getUser, signup, update } from "../services/user-service";
 
 const AuthContext = createContext();
 
@@ -22,20 +22,27 @@ export const  AuthProvider = (props) => {
     const login = (credentials)=> {
         return sessions.login(credentials).then(user=>{
             setUser(user)
-            navigate("profile")
+            navigate("logged")
         })
     }
     const signupUser = (credentials) => {
         return signup(credentials).then(user => {
             setUser(user)
-            navigate("profile")
+            navigate("logged")
         })
     }
 
     const logout = () => {
         return sessions.logout().then(()=> {
             setUser(null);
-            navigate("login")
+            navigate("logged")
+        })
+    }
+
+    const updateUser = (credentials) => {
+        return update(credentials).then((userData) =>{
+            setUser(userData);
+            console.log("user upda", user)
         })
     }
 
@@ -43,7 +50,8 @@ export const  AuthProvider = (props) => {
         user, 
         login, 
         logout,
-        signupUser
+        signupUser, 
+        updateUser
     }
     
     if(loading) return <p>Loading...</p>

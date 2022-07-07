@@ -11,7 +11,13 @@ export function signup(credentials) {
     return apiFetch("users", {body: credentials}).then((response) =>{
         const {token, ...user} = response;
         sessionStorage.setItem(tokenKey, token)
-        console.log(token, user)
         return user;
     } )
+}
+export function update(userData) {
+    return apiFetch("/profile", {body: userData, method: "PATCH"})
+    .then((response)=> {
+        const {_token, ...user} = response;
+        return user;
+    })
 }
