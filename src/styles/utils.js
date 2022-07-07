@@ -17,6 +17,11 @@ export const containerColumn = `
     display: flex;
     flex-direction: column;
 `
+export const contColumnCenter = `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 export const containerCard = `
     ${containerColumn};
     background-color: #FFFFFF;
