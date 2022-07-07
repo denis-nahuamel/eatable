@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import ProfileData from "../components/profile-data";
 import ProfileEdit from "../components/profile-edit";
 import { useAuth } from "../context/auth-context";

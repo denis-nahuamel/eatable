@@ -18,4 +18,6 @@ export const imageFood = `
 export const containerFood = `
     ${container};
     gap: 20px;
+    height: 535px;
+    overflow-y: auto;
 `
