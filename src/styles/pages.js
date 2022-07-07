@@ -18,6 +18,27 @@ export const imageFood = `
 export const containerFood = `
     ${container};
     gap: 20px;
-    height: 535px;
+    padding: 15px 0;
+    height: 480px;
     overflow-y: auto;
+`
+export const list = `
+list-style: none;
+display: flex;
+width: 100%;
+    overflow-x: auto;
+`
+export const listMenu = `
+    ${list};
+    justify-content: space-around;
+    align-items: center;
+`
+export const listInline = `
+    ${list};
+    gap: 4rem;
+`
+export const listInlineEl = `
+    display: inline;
+    cursor: pointer;
+    
 `

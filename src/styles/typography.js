@@ -12,5 +12,13 @@ export const title = `
 export const subTitle = `
     ${sansDefault};
     color: #FA4A0C;
+`
+export const headText = `
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
 
+    color: #9A9A9D;
 `
