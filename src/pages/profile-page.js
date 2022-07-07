@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
 import ProfileData from "../components/profile-data";
 import ProfileEdit from "../components/profile-edit";
 import { useAuth } from "../context/auth-context";
@@ -11,6 +9,7 @@ export const ProfilePage = () => {
 	"phone": "987654321",
 	"address": "Lima-Peru"
 } */
+console.log("user", user)
 const handleSubmit = (event) => {
   event.preventDefault();
   const {email, name, phone, address} = event.target.elements

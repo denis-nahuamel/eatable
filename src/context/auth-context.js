@@ -8,6 +8,8 @@ const AuthContext = createContext();
 export const  AuthProvider = (props) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [checkoutList, setCheckoutList] = useState([]);
+    let checkout = [];
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,13 +24,13 @@ export const  AuthProvider = (props) => {
     const login = (credentials)=> {
         return sessions.login(credentials).then(user=>{
             setUser(user)
-            navigate("logged")
+            navigate("auth")
         })
     }
     const signupUser = (credentials) => {
         return signup(credentials).then(user => {
             setUser(user)
-            navigate("logged")
+            navigate("auth")
         })
     }
 
@@ -45,13 +47,18 @@ export const  AuthProvider = (props) => {
             console.log("user upda", user)
         })
     }
-
+    const addCheckoutList = (value)=> {
+        checkout.push(value)
+        setCheckoutList([...checkoutList, value ]);
+    }
     const value = {
         user, 
+        checkoutList,
         login, 
         logout,
         signupUser, 
-        updateUser
+        updateUser,
+        addCheckoutList
     }
     
     if(loading) return <p>Loading...</p>
