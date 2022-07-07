@@ -35,7 +35,7 @@ export const  AuthProvider = (props) => {
     const logout = () => {
         return sessions.logout().then(()=> {
             setUser(null);
-            navigate("login")
+            navigate("logged")
         })
     }
 
