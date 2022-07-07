@@ -4,6 +4,7 @@ import { ProfilePage } from "./profile-page";
 import RecordPage from "./record-page";
 
 const AuthenticatedPage = () => {
+   
     const [currentPage, setCurrentPage] = useState("profile");
     const handleHome = () => {
         setCurrentPage("home")
@@ -24,7 +25,7 @@ const AuthenticatedPage = () => {
             </ul>
         </div>
         <div>
-            {currentPage === "profile"? <ProfilePage/>: (currentPage === "home"? <HomePage/>: <RecordPage/>)}
+            {currentPage === "profile"? <ProfilePage />: (currentPage === "home"? <HomePage/>: <RecordPage/>)}
         </div>
         </>
     )

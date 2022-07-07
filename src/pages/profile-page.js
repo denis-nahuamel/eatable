@@ -1,58 +1,28 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import ProfileData from "../components/profile-data";
+import ProfileEdit from "../components/profile-edit";
+import { useAuth } from "../context/auth-context";
 import { containerCard, labelInput } from "../styles/utils";
 export const ProfilePage = () => {
+  const { user, updateUser} = useAuth();
   /***{ /profile
 	"name": "Testino Diprueba",
 	"phone": "987654321",
 	"address": "Lima-Peru"
 } */
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const {email, name, phone, address} = event.target.elements
+  const userUpdated = {
+    email: email.value,
+    name: name.value,
+    phone: phone.value,
+    address: address.value
+  }
+  updateUser(userUpdated).then((response)=> console.log(response))
+}
   return (
-    <div>
-      <div>
-        <h2>Update personal details</h2>
-      </div>
-      <div
-        css={css`
-          ${containerCard}
-        `}
-      >
-        <div
-          css={css`
-            ${labelInput}
-          `}
-        >
-          <label>Name</label>
-          <input />
-        </div>
-        <div
-          css={css`
-            ${labelInput}
-          `}
-        >
-          <label>Email</label>
-          <input />
-        </div>
-        <div
-          css={css`
-            ${labelInput}
-          `}
-        >
-          <label>Phone</label>
-          <input />
-        </div>
-        <div
-          css={css`
-            ${labelInput}
-          `}
-        >
-          <label>Address</label>
-          <input />
-        </div>
-        <div>
-          <button>Update</button>
-        </div>
-      </div>
-    </div>
+   user.name?<ProfileData />: <ProfileEdit user = {user} onHandleSubmit={handleSubmit} />
   );
 };
