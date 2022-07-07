@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { buttonLogin, container, containerColumn } from "../styles/utils";
+import { buttonLogin } from "../styles/button";
+import {  container, containerColumn } from "../styles/utils";
 
 const FormData = ({ endpoint, type }) => {
   return (
