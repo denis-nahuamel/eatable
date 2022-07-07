@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import {useNavigate} from "react-router-dom";
 import * as sessions from "../services/auth-service.js";
-import { getUser, signup } from "../services/user-service";
+import { getUser, signup, update } from "../services/user-service";
 
 const AuthContext = createContext();
 
@@ -39,11 +39,19 @@ export const  AuthProvider = (props) => {
         })
     }
 
+    const updateUser = (credentials) => {
+        return update(credentials).then((userData) =>{
+            setUser(userData);
+            console.log("user upda", user)
+        })
+    }
+
     const value = {
         user, 
         login, 
         logout,
-        signupUser
+        signupUser, 
+        updateUser
     }
     
     if(loading) return <p>Loading...</p>
