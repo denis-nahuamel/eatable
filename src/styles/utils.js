@@ -37,13 +37,7 @@ export const labelInput = `
     ${containerColumn};
     gap: 5px;
 `
-export const buttonLogin = `
-    ${container};
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: 10px;
-`
+
 export const inputSearch =`
     background-color: #F6F6F9;
     height: 23px;

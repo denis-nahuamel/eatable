@@ -2,15 +2,21 @@ export const sansDefault = `
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
     line-height: 28px;
 `
 export const title = `
     ${sansDefault};
+    font-size: 22px;
     color: #333333;
+`
+export const description = `
+    ${sansDefault};
+    color: #333333;
+    font-size: 18px;
 `
 export const subTitle = `
     ${sansDefault};
+    font-size: 22px;
     color: #FA4A0C;
 `
 export const headText = `
