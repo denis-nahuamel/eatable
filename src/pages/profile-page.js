@@ -11,6 +11,7 @@ export const ProfilePage = () => {
 	"phone": "987654321",
 	"address": "Lima-Peru"
 } */
+console.log("user", user)
 const handleSubmit = (event) => {
   event.preventDefault();
   const {email, name, phone, address} = event.target.elements

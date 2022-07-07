@@ -5,8 +5,8 @@ export const AuthenticatedApp = () => {
     return (
         <Routes>
             <Route path="/" >
-                <Route index  element={<Navigate to="logged" replace={true}/>}/>
-                <Route path= "logged" element = {<AuthenticatedPage />}/>
+                <Route index  element={<Navigate to="auth" replace={true}/>}/>
+                <Route path= "auth" element = {<AuthenticatedPage />}/>
                 <Route path="profile" element={<ProfilePage />} />
             </Route>
         </Routes>
