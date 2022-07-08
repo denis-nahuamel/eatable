@@ -56,11 +56,9 @@ const FormData = ({ endpoint, type }) => {
               <ErrorMessage name="password" component="div" />
             </div>
             <div
-              css={css`
-                ${buttonLogin}
-              `}
+              
             >
-              <button type="submit" disabled={isSubmitting}>
+              <button css={css`${buttonLogin}`} type="submit" disabled={isSubmitting}>
                 {type}
               </button>
             </div>

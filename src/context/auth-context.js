@@ -47,8 +47,9 @@ export const  AuthProvider = (props) => {
         })
     }
     const addCheckoutList = (value)=> {
+        value.total = value.price;
+        value.quantity = 1;
         setCheckoutList([...checkoutList, value ]);
-        console.log("chec", checkoutList)
     }
     const value = {
         user, 
