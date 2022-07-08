@@ -9,6 +9,11 @@ export const title = `
     font-size: 22px;
     color: #333333;
 `
+export const titleCheck = `
+    ${sansDefault};
+    font-size: 16px;
+    color: #333333;
+`
 export const description = `
     ${sansDefault};
     color: #333333;

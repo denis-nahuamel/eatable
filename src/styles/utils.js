@@ -19,10 +19,23 @@ export const containerColumn = `
     display: flex;
     flex-direction: column;
 `
+export const contColumGap = `
+    ${containerColumn};
+    gap: 20px;
+`
 export const contColumnCenter = `
     display: flex;
     flex-direction: column;
     align-items: center;
+`
+export const contRowCenter = `
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
+export const contRowCenterGap = `
+    ${contRowCenter};
+    gap:20px;
 `
 export const containerCard = `
     ${containerColumn};
@@ -47,6 +60,7 @@ export const containerGap = `
     gap:8px;
     justify-content: space-around;
 `
+
 export const footer = `
     position: fixed;
     bottom: 0;
