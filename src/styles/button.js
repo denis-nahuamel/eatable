@@ -19,6 +19,8 @@ export const containerButton = `
     bottom: 70px;
 `
 export const returnButton = `
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     margin-left: 60px;
     padding: 22px;

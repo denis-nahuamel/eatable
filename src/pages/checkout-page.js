@@ -6,9 +6,8 @@ import { useAuth } from "../context/auth-context";
 import { buttonLogin, containerButton } from "../styles/button";
 import { containerCheck, contTotalCheck } from "../styles/checkout-style";
 import { description, sans28 } from "../styles/typography";
-import { containerColumn, containerGap, containerRow, contColumGap, contRowBetween } from "../styles/utils";
 
-const CheckoutPage = ()=> {
+const CheckoutPage = ({onHandleDelivery})=> {
     const {checkoutList} = useAuth();
     const [total, setTotal] = useState(0)
     console.log("chd", checkoutList)
@@ -17,9 +16,11 @@ const CheckoutPage = ()=> {
     }
     useEffect(() => {
       setTotal(checkoutList.reduce((acc,curr)=> {return acc+curr.total},0))
-      console.log("hell",checkoutList.reduce((acc,curr)=> acc+curr.total,0))
     }, [])
-    
+    const handleTotalDelivery =  (event) => {
+        event.preventDefault();
+        onHandleDelivery(total)
+    }
     return(
         <>
         <div css={css`${containerCheck}`}>
@@ -32,7 +33,7 @@ const CheckoutPage = ()=> {
             <label css={css`${sans28}`}>$ {total}</label>
         </div>
         <div css={css`${containerButton}`}>
-                <button css={css`${buttonLogin}`} >Checkout</button>
+                <button css={css`${buttonLogin}`} onClick={handleTotalDelivery} >Checkout</button>
             </div>
         </>
     )
