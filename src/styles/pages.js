@@ -27,15 +27,7 @@ export const imageCheck = `
     height: 62px;
     border-radius: 50px;
 `
-export const cardCheck = `
-    ${contRowCenter};
-    background: white;
-    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
-    border-radius: 20px;
-    padding: 20px;
-    justify-content: space-between;
-    gap: 20px;
-`
+
 export const imageFoodDetail = `
     width: 240px;
     height: 240px;
@@ -48,10 +40,7 @@ export const containerFood = `
     height: 480px;
     overflow-y: auto;
 `
-export const containerCheck = `
-    ${contColumGap};
-    padding: 20px;
-`
+
 export const list = `
 list-style: none;
 display: flex;
@@ -84,7 +73,4 @@ ${sansDefault};
     background-color: #FA4A0C;
     font-size: 18px;
     cursor: pointer;
-`
-export const numberCheck = `
-    font-size: 18px;
 `

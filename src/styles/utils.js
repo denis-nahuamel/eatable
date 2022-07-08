@@ -19,6 +19,14 @@ export const containerColumn = `
     display: flex;
     flex-direction: column;
 `
+export const containerRow = `
+    display: flex;
+    flex-direction: row;
+`
+export const contRowBetween = `
+    ${containerRow};
+    justify-content: space-between;
+`
 export const contColumGap = `
     ${containerColumn};
     gap: 20px;
@@ -29,8 +37,7 @@ export const contColumnCenter = `
     align-items: center;
 `
 export const contRowCenter = `
-    display: flex;
-    flex-direction: row;
+    ${containerRow}
     align-items: center;
 `
 export const contRowCenterGap = `

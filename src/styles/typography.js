@@ -4,20 +4,25 @@ export const sansDefault = `
     font-weight: 600;
     line-height: 28px;
 `
-export const title = `
+export const sansGray = `
     ${sansDefault};
-    font-size: 22px;
     color: #333333;
+`
+export const title = `
+    ${sansGray};
+    font-size: 22px;
 `
 export const titleCheck = `
-    ${sansDefault};
+    ${sansGray};
     font-size: 16px;
-    color: #333333;
 `
 export const description = `
-    ${sansDefault};
-    color: #333333;
+    ${sansGray};
     font-size: 18px;
+`
+export const sans28 = `
+    ${sansGray};
+    font-size: 28px;
 `
 export const subTitle = `
     ${sansDefault};
