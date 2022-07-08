@@ -9,7 +9,6 @@ export const  AuthProvider = (props) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [checkoutList, setCheckoutList] = useState([]);
-    let checkout = [];
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,8 +47,8 @@ export const  AuthProvider = (props) => {
         })
     }
     const addCheckoutList = (value)=> {
-        checkout.push(value)
         setCheckoutList([...checkoutList, value ]);
+        console.log("chec", checkoutList)
     }
     const value = {
         user, 
