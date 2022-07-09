@@ -8,7 +8,6 @@ import { contRowBetweenW100, contStartW100, line } from "../styles/utils";
 const CardRecord = ({order}) => {
    const {user} = useAuth();
    let date = new Date(order.created_at.split('T')[0]).toDateString();
-    console.log("date", date)
    return (
             <div css={css`${recordCard}`} >
                 <div>
