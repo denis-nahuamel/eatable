@@ -8,7 +8,8 @@ export const imageLogin = `
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
 `
 export const containerSignLogin = `
-    ${contRowAround}
+    ${contRowAround};
+    cursor: pointer; 
     background: #FFFFFF;
     border-radius: 0 0 40px 0;
     padding: 15px;
