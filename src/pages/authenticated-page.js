@@ -14,6 +14,7 @@ import DeliveryPage from "./delivery-page";
 const AuthenticatedPage = () => {
     const [currentPage, setCurrentPage] = useState("profile");
     const [totalCheckout, setTotalCheckout] = useState(0);
+    const [search, setSearch] = useState("");
     let date = new Date();
     const handleFood = () => {
         setCurrentPage("food")
@@ -31,12 +32,19 @@ const AuthenticatedPage = () => {
     const handlePreviousPage = (value) => {
         setCurrentPage(value)
     }
+    const handleSearch = (value)=> {
+        setSearch(value)
+    }
     return (
         <>
-        <HeaderPage onCurrentPage = {currentPage} onHandlePage = {handleCheckout} onHandlePreviousPage = {handlePreviousPage}/>
+        <HeaderPage 
+            onHandleSearch = {handleSearch}
+            onCurrentPage = {currentPage} 
+            onHandlePage = {handleCheckout} 
+            onHandlePreviousPage = {handlePreviousPage}/>
         <div>
             {currentPage === "profile"? <ProfilePage />:
-             (currentPage === "home"? <HomePage onHandlePage = {handleFood}/>:
+             (currentPage === "home"? <HomePage onHandlePage = {handleFood} search= {search}/>:
              (currentPage === "food"? <FoodPage onHandleCheckout = {handleCheckout}/>:
              (currentPage === "checkout"? <CheckoutPage onHandleDelivery = {handleDelivery} />:
              (currentPage === "delivery"? <DeliveryPage total={totalCheckout} onHandleRecord = {handleRecord}/>:<RecordPage onDate = {date}/>))) )}
