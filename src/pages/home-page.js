@@ -36,8 +36,7 @@ const HomePage = ({onHandlePage, search}) => {
     else setFilter(products)
   }
   return (
-    <div>
-       
+    <>
         <ProductType onHandleFoodType={HandleFoodType}/>
         <div css={css`${containerFood}`}>
         {products.length !==0 ? (
@@ -48,7 +47,7 @@ const HomePage = ({onHandlePage, search}) => {
             <p>empty products</p>
         )}
         </div>
-    </div>
+    </>
   );
 };
 export default HomePage;

@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { container, containerGap, inputSearch } from "../styles/utils";
+import { container, containerGap, inputBar, inputSearch } from "../styles/utils";
 const InputSearch = ({onHandlePage, onHandleSearch})=>{
     // const handleSearch =()=>{
     // }
 return (
-    <div css={css`${containerGap}`}>
+    <div css={css`${inputBar}`}>
         <div css={css`${containerGap}`}>
             <img src={process.env.PUBLIC_URL + "/search.png"}/>
             <input css={css`${inputSearch}`}
