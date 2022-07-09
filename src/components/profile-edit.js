@@ -1,5 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { buttonLogin, containerButton } from "../styles/button";
+import { sans18W600, sans22W600 } from "../styles/typography";
+import { buttonMargin } from "../styles/unauthenticated";
 import { containerCard, labelInput } from "../styles/utils";
 const ProfileEdit = ({user, onHandleSubmit}) => {
     const handleSubmit= (value) => {
@@ -7,19 +10,17 @@ const ProfileEdit = ({user, onHandleSubmit}) => {
     } 
     return (
         <div>
-      <div>
-        <h2>Update personal details</h2>
+      <div  css={css`${sans18W600}; margin-left: 50px;`}>
+        Update personal details
       </div>
       <div
         css={css`
-          ${containerCard}
+          ${containerCard}; margin: 20px;
         `}
       >
         <form onSubmit={handleSubmit}>
           <div
-            css={css`
-              ${labelInput}
-            `}
+            css={css`${labelInput}`}
           >
             <label>Name</label>
             <input type="text" id="name"/>
@@ -48,8 +49,8 @@ const ProfileEdit = ({user, onHandleSubmit}) => {
             <label>Address</label>
             <input type="text" id="address"/>
           </div>
-          <div>
-            <button type="submit" value= "Update" >Update</button>
+          <div css={css` ${containerButton} `}>
+            <button css={css`${buttonLogin}`} type="submit" value= "Update" >Update</button>
           </div>
         </form>
       </div>

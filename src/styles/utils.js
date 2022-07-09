@@ -6,6 +6,15 @@ export const background = `
     top: 0;
     left: 0
 `
+export const contStart = `
+    display: flex;
+    justify-content: flex-start;
+`
+
+export const contStartW100 = `
+    ${contStart};
+    width: 100%;
+`
 export const basicContainer = `
     display: flex;
     align-items: center;
@@ -24,6 +33,11 @@ export const containerColumn = `
     display: flex;
     flex-direction: column;
 `
+export const contColumnAlign = `
+    ${containerColumn};
+    align-items:center;
+
+`
 export const containerRow = `
     display: flex;
     flex-direction: row;
@@ -32,9 +46,18 @@ export const contRowBetween = `
     ${containerRow};
     justify-content: space-between;
 `
+export const contRowBetweenW100 = `
+    ${contRowBetween};
+    width: 100%;
+`
 export const contRowAround = `
     ${containerRow};
+    background: #F6F6F9;
     justify-content: space-around;
+`
+export const contRowAroundFullWidth = `
+    ${contRowAround};
+    width: 100%
 `
 export const contColumGap = `
     ${containerColumn};
@@ -76,13 +99,17 @@ export const containerGap = `
     gap:8px;
     justify-content: space-around;
 `
+export const inputBar = `
+    ${containerGap};
+    margin: 15px 0;
+`
 export const line = `
-width: 80%;
-border-bottom: 1px solid black;
-opacity: 0.5;
+    width: 100%;
+    border-bottom: 1px solid black;
+    opacity: 0.5;
 `
 export const footer = `
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
 `

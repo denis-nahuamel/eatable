@@ -3,14 +3,19 @@ import { container, contColumGap, contColumnCenter, contRowCenter } from "./util
 export const card = `
     ${contColumnCenter};
     width: 156px;
-    height: 250px;
+    height: 215px;
     left: 41px;
     top: 2px;
+    padding: 8px;
+    gap: 2px;
     box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.1);
     border-radius: 30px;
 `
 export const cardFood = `
     ${card};
+    margin: 20px 0;
+    cursor: pointer;
+    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.2);
     background: white;
 `;
 export const cardFoodDetail = `
@@ -18,6 +23,9 @@ export const cardFoodDetail = `
     background: #F6F6F9;
 `
 export const imageFood = `
+    position: relative;
+    box-shadow: 0px 30px 60px rgba(57, 57, 57, 0.2);
+    top: -40px;
     width: 130px;
     height: 130px;
     border-radius: 75px;
@@ -36,8 +44,8 @@ export const imageFoodDetail = `
 export const containerFood = `
     ${container};
     gap: 20px;
-    padding: 15px 0;
-    height: 480px;
+    padding: 30px 0;
+    height: 520px;
     overflow-y: auto;
 `
 

@@ -4,10 +4,12 @@ import { returnButton } from "../styles/button";
 import InputSearch from "./input-search";
 import PreviousPage from "./previous-page";
 
-const HeaderPage = ({onCurrentPage, onHandlePage, onHandlePreviousPage}) => {
+const HeaderPage = ({onCurrentPage, onHandlePage, onHandlePreviousPage, onHandleSearch}) => {
     return (
         <>
-            {onCurrentPage==="home"? <InputSearch onHandlePage = {onHandlePage}  />: <PreviousPage onHandlePreviousPage={onHandlePreviousPage}/>}  
+            {onCurrentPage==="home"? 
+            <InputSearch onHandlePage = {onHandlePage} onHandleSearch={onHandleSearch} />:
+            <PreviousPage onHandlePreviousPage={onHandlePreviousPage}/>}  
         </>
     )
 }

@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import { useEffect } from "react";
 import { useAuth } from "../context/auth-context";
 import { buttonLogin, containerButton, returnButton } from "../styles/button";
+import { foodDescription } from "../styles/food";
 import { cardFood, cardFoodDetail, imageFood, imageFoodDetail } from "../styles/pages";
 import { description, subTitle, title } from "../styles/typography";
 import {  containerColumn, contColumnCenter } from "../styles/utils";
@@ -29,7 +30,7 @@ const FoodPage = () => {
                 <label css={css`${title}`}>{food.name}</label>
                 <label css={css`${subTitle}`}>$ {food.price}</label>
             </div>
-            <div css={css`${containerColumn}`}>
+            <div css={css`${foodDescription}`}>
                 <label css={css`${description}`}>Description</label>
                 <label > {food.description}</label>
             </div>

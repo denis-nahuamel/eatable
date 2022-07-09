@@ -16,12 +16,16 @@ export const buttonLogin = `
 export const containerButton = `
     display: flex;
     position: fixed;
-    bottom: 70px;
+    bottom: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 `
 export const returnButton = `
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
-    margin-left: 60px;
-    padding: 22px;
+    cursor: pointer;
+    padding: 22px 0px;
 `
