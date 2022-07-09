@@ -15,14 +15,43 @@ export const container = `
     ${basicContainer};
     justify-content: center;
 `
+export const contCenterCenter = `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 export const containerColumn = `
     display: flex;
     flex-direction: column;
+`
+export const containerRow = `
+    display: flex;
+    flex-direction: row;
+`
+export const contRowBetween = `
+    ${containerRow};
+    justify-content: space-between;
+`
+export const contRowAround = `
+    ${containerRow};
+    justify-content: space-around;
+`
+export const contColumGap = `
+    ${containerColumn};
+    gap: 20px;
 `
 export const contColumnCenter = `
     display: flex;
     flex-direction: column;
     align-items: center;
+`
+export const contRowCenter = `
+    ${containerRow}
+    align-items: center;
+`
+export const contRowCenterGap = `
+    ${contRowCenter};
+    gap:20px;
 `
 export const containerCard = `
     ${containerColumn};
@@ -46,6 +75,11 @@ export const containerGap = `
     ${basicContainer};
     gap:8px;
     justify-content: space-around;
+`
+export const line = `
+width: 80%;
+border-bottom: 1px solid black;
+opacity: 0.5;
 `
 export const footer = `
     position: fixed;

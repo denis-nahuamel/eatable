@@ -1,17 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useEffect } from "react";
 import { useAuth } from "../context/auth-context";
 import { buttonLogin, containerButton, returnButton } from "../styles/button";
 import { cardFood, cardFoodDetail, imageFood, imageFoodDetail } from "../styles/pages";
 import { description, subTitle, title } from "../styles/typography";
 import {  containerColumn, contColumnCenter } from "../styles/utils";
 const FoodPage = () => {
-    const {addCheckoutList} = useAuth();
+    const {addCheckoutList, handlePreviousPage, handleTitle} = useAuth();
     const food = JSON.parse(localStorage.getItem("current_food"));
     const image = `
         margin-bottom: 70px;
     `
-
+    useEffect(()=>{
+        handlePreviousPage("home")
+        handleTitle("")
+    },[])
+    const handleCheckoutPage =(event)=> {
+        event.preventDefault();
+        addCheckoutList(food)
+    }
     return (
         <div css={css`${contColumnCenter}`}>
             <div css={css`${image}`}>
@@ -26,7 +34,7 @@ const FoodPage = () => {
                 <label > {food.description}</label>
             </div>
             <div css={css`${containerButton}`}>
-                <button css={css`${buttonLogin}`} onClick={()=>addCheckoutList(food)}>Add to Cart</button>
+                <button css={css`${buttonLogin}`} onClick={handleCheckoutPage}>Add to Cart</button>
             </div>
         </div>
     )

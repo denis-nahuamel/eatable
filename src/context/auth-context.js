@@ -7,9 +7,10 @@ const AuthContext = createContext();
 
 export const  AuthProvider = (props) => {
     const [user, setUser] = useState(null);
+    const [title, setTitle] = useState("");
+    const [previousPage, setPreviousPage] = useState("");
     const [loading, setLoading] = useState(true);
     const [checkoutList, setCheckoutList] = useState([]);
-    let checkout = [];
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -48,12 +49,27 @@ export const  AuthProvider = (props) => {
         })
     }
     const addCheckoutList = (value)=> {
-        checkout.push(value)
+        value.total = value.price;
+        value.quantity = 1;
         setCheckoutList([...checkoutList, value ]);
+    }
+
+    const handleTitle = (value) => {
+        setTitle(value)
+    }
+    const handlePreviousPage = (value) => {
+        setPreviousPage(value)
+    }
+    const handleGoPreviousPage = () => {
+        //navigate(previousPage)
     }
     const value = {
         user, 
         checkoutList,
+        title,
+        handleTitle,
+        previousPage,
+        handlePreviousPage,
         login, 
         logout,
         signupUser, 

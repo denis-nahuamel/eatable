@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import ProfileData from "../components/profile-data";
 import ProfileEdit from "../components/profile-edit";
 import { useAuth } from "../context/auth-context";
 import { containerCard, labelInput } from "../styles/utils";
 export const ProfilePage = () => {
-  const { user, updateUser} = useAuth();
+  const { user, updateUser, handleTitle} = useAuth();
   /***{ /profile
 	"name": "Testino Diprueba",
 	"phone": "987654321",
 	"address": "Lima-Peru"
 } */
+useEffect(() => {
+  handleTitle("My Profile");
+}, [])
+
 console.log("user", user)
 const handleSubmit = (event) => {
   event.preventDefault();

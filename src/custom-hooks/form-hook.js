@@ -2,15 +2,13 @@
 import { css } from "@emotion/react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { buttonLogin } from "../styles/button";
+import { sans14W600Gray } from "../styles/typography";
+import { backgroundForm, buttonMargin } from "../styles/unauthenticated";
 import {  container, containerColumn } from "../styles/utils";
 
 const FormData = ({ endpoint, type }) => {
   return (
-    <div
-      css={css`
-        ${container}
-      `}
-    >
+   
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values) => {
@@ -36,38 +34,30 @@ const FormData = ({ endpoint, type }) => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <div
-              css={css`
-                ${containerColumn}
-              `}
-            >
-              <label>Email address: </label>
-              <Field type="email" name="email" />
-              <ErrorMessage name="email" component="div" />
-            </div>
-            <div
-              css={css`
-                ${containerColumn}
-              `}
-            >
-              <label>Password: </label>
-              <Field type="password" name="password" />
-              <ErrorMessage name="password" component="div" />
-            </div>
-            <div
-              css={css`
-                ${buttonLogin}
-              `}
-            >
-              <button type="submit" disabled={isSubmitting}>
-                {type}
-              </button>
+          <Form  >
+            <div>
+              <div>
+                <div css={css`${containerColumn}`}>
+                  <label css={css`${sans14W600Gray}`}>Email address: </label>
+                  <Field css={css` ${backgroundForm} `} type="email" name="email" />
+                  <ErrorMessage name="email" component="div" />
+                </div>
+                <div css={css` ${containerColumn} `}>
+                  <label css={css`${sans14W600Gray}`}>Password: </label>
+                  <Field css={css`${backgroundForm}`} type="password" name="password" />
+                  <ErrorMessage name="password" component="div" />
+                </div>
+              </div>
+              <div css={css` ${buttonMargin} `}>
+                <button css={css`${buttonLogin}`} type="submit" disabled={isSubmitting}>
+                  {type}
+                </button>
+              </div>
             </div>
           </Form>
         )}
       </Formik>
-    </div>
+    
   );
 };
 export default FormData;

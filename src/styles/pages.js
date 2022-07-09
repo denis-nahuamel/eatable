@@ -1,4 +1,5 @@
-import { container, contColumnCenter } from "./utils";
+import { sansDefault } from "./typography";
+import { container, contColumGap, contColumnCenter, contRowCenter } from "./utils";
 export const card = `
     ${contColumnCenter};
     width: 156px;
@@ -21,6 +22,12 @@ export const imageFood = `
     height: 130px;
     border-radius: 75px;
 `;
+export const imageCheck = `
+    width: 62px;
+    height: 62px;
+    border-radius: 50px;
+`
+
 export const imageFoodDetail = `
     width: 240px;
     height: 240px;
@@ -33,6 +40,7 @@ export const containerFood = `
     height: 480px;
     overflow-y: auto;
 `
+
 export const list = `
 list-style: none;
 display: flex;
@@ -52,4 +60,17 @@ export const listInlineEl = `
     display: inline;
     cursor: pointer;
     
+`
+export const minusPlusButton = `
+${sansDefault};
+    ${contRowCenter};
+    color: white;
+    border-radius: 20px;
+    height: 20px;
+    padding: 0 10px;
+    gap: 10px;
+    justify-content: space-evenly;
+    background-color: #FA4A0C;
+    font-size: 18px;
+    cursor: pointer;
 `
