@@ -14,9 +14,11 @@ export const  AuthProvider = (props) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-       
+        //console.log(JSON.parse(localStorage.getItem("checkout")))
+        JSON.parse(localStorage.getItem("checkout")) ? 
+        setCheckoutList(JSON.parse(localStorage.getItem("checkout"))):setCheckoutList([])
       getUser().then((data)=>{
-        setLoading(false);
+        setLoading(false);  
         setUser(data)
       } )
       .catch((error)=> {console.log("error", error); setLoading(false)})
@@ -45,12 +47,12 @@ export const  AuthProvider = (props) => {
     const updateUser = (credentials) => {
         return update(credentials).then((userData) =>{
             setUser(userData);
-            console.log("user upda", user)
         })
     }
     const addCheckoutList = (value)=> {
         value.total = value.price;
         value.quantity = 1;
+        localStorage.setItem("checkout", JSON.stringify([...checkoutList, value ]) )
         setCheckoutList([...checkoutList, value ]);
     }
 
@@ -59,9 +61,6 @@ export const  AuthProvider = (props) => {
     }
     const handlePreviousPage = (value) => {
         setPreviousPage(value)
-    }
-    const handleGoPreviousPage = () => {
-        //navigate(previousPage)
     }
     const value = {
         user, 
