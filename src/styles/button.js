@@ -17,6 +17,9 @@ export const containerButton = `
     display: flex;
     position: fixed;
     bottom: 70px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 `
 export const returnButton = `
     display: flex;
